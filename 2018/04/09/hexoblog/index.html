@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="github,hexo,next," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="闲谈早就想写搭建1个博客，但总是没什么时间，最近比较空闲，抽空搭建并写下来方便记忆。要说博客的用处，最大的还是将自己需要的资料进行记录，之后有需要就可以直接翻看，而不是各种度娘查资料。首先度娘了不少，发现发现hexo+github蛮不错的，搭建之后在绑定到自己的域名下，添加上各种功能，感觉萌萌哒。结果搭建过程中，遇到了不少坑。把自己的坑也说下。免得后来人与我一样。那么开始吧。 环境git node">
+<meta name="keywords" content="github,hexo,next">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用hexo+github搭建自己的博客并使用next设置主题">
+<meta property="og:url" content="http://blog.mydarksea.com/2018/04/09/hexoblog/index.html">
+<meta property="og:site_name" content="my dark sea">
+<meta property="og:description" content="闲谈早就想写搭建1个博客，但总是没什么时间，最近比较空闲，抽空搭建并写下来方便记忆。要说博客的用处，最大的还是将自己需要的资料进行记录，之后有需要就可以直接翻看，而不是各种度娘查资料。首先度娘了不少，发现发现hexo+github蛮不错的，搭建之后在绑定到自己的域名下，添加上各种功能，感觉萌萌哒。结果搭建过程中，遇到了不少坑。把自己的坑也说下。免得后来人与我一样。那么开始吧。 环境git node">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/git.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/github_01.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/github_02.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_01.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_02.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_03.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_04.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_05.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_06.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_07.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_08.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_09.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/next_01.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_07.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/next_02.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/next_03.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/next_04.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/next_05.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/next_06.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/next_07.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/next_08.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/leancloud_01.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/leancloud_02.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/leancloud_03.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/leancloud_04.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/leancloud_06.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/leancloud_07.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/leancloud_08.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/leancloud_09.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/changyan_01.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/changyan_02.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/changyan_03.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/ip_01.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/ip_02.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/ip_03.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/pay.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/pay_01.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/hexo_10.png">
+<meta property="og:updated_time" content="2018-04-09T09:38:11.669Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用hexo+github搭建自己的博客并使用next设置主题">
+<meta name="twitter:description" content="闲谈早就想写搭建1个博客，但总是没什么时间，最近比较空闲，抽空搭建并写下来方便记忆。要说博客的用处，最大的还是将自己需要的资料进行记录，之后有需要就可以直接翻看，而不是各种度娘查资料。首先度娘了不少，发现发现hexo+github蛮不错的，搭建之后在绑定到自己的域名下，添加上各种功能，感觉萌萌哒。结果搭建过程中，遇到了不少坑。把自己的坑也说下。免得后来人与我一样。那么开始吧。 环境git node">
+<meta name="twitter:image" content="http://blog.mydarksea.com/2018/04/09/hexoblog/git.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.mydarksea.com/2018/04/09/hexoblog/"/>
+
+
+
+
+
+  <title>用hexo+github搭建自己的博客并使用next设置主题 | my dark sea</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">my dark sea</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习让我快乐</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.mydarksea.com/2018/04/09/hexoblog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丁海洋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my dark sea">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">用hexo+github搭建自己的博客并使用next设置主题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T14:45:39+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/04/09/hexoblog/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/04/09/hexoblog/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/04/09/hexoblog/" class="leancloud_visitors" data-flag-title="用hexo+github搭建自己的博客并使用next设置主题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h4><p>早就想写搭建1个博客，但总是没什么时间，最近比较空闲，抽空搭建并写下来方便记忆。<br>要说博客的用处，最大的还是将自己需要的资料进行记录，之后有需要就可以直接翻看，而不是各种度娘查资料。<br>首先度娘了不少，发现发现hexo+github蛮不错的，搭建之后在绑定到自己的域名下，添加上各种功能，感觉萌萌哒。结果搭建过程中，遇到了不少坑。把自己的坑也说下。免得后来人与我一样。<br>那么开始吧。</p>
+<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><h5 id="git-node-js安装"><a href="#git-node-js安装" class="headerlink" title="git node.js安装"></a>git node.js安装</h5><p>当然开始之前需要基本的环境，git node.js 基本上准备搭建博客的应该都有了吧。如果没有，去对应的官网下载，安装很简单，都是一路next就好。安装完毕建议去cmd运行<br>    git –version<br>    node -v<br>    npm -v<br>进行验证是否已经成功安装。<br><img src="/2018/04/09/hexoblog/git.png"></p>
+<h5 id="github"><a href="#github" class="headerlink" title="github"></a>github</h5><p>既然文章名为hexo + github 。那么github的注册也是必须的。</p>
+<h6 id="申请github"><a href="#申请github" class="headerlink" title="申请github"></a>申请github</h6><p>点击-&gt; <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 进入官网注册帐号<br>注册这方面不是什么问题，就不详细说明了，实在不会，使用谷歌浏览器，右键选择翻译全文。再不会。。就放弃吧。</p>
+<h6 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h6><img src="/2018/04/09/hexoblog/github_01.png">
+<p>进入Repositories然后点击new<br><img src="/2018/04/09/hexoblog/github_02.png"><br>Repository name 的前缀与你的账号相同，后面跟上 github.io  不要在意我的报错提示，因为我已经生成了所以会提示存在。其他选项默认就好，设置好之后点击create repository生成。<br>当你申请完毕之后，你进入 username.github.io。(username表示你的注册名)你会发现已经有1个网站出现了。这是github默认的。只要这么创建就会自动将其作为github的博客。</p>
+<h5 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h5><p>接下来，就是安装hexo，这是1个基于node.js的静态博客，<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">官网</a>也是搭建在GitHub上 </p>
+<ul>
+<li>新建一个blog文件夹,该文件夹用于存放你的博客文件,(位置随意，你自己选喜欢的)然后右键单击选择“Git Bash”(如果正常安装了git，那么你的右键肯定会有这2个选项的)<img src="/2018/04/09/hexoblog/hexo_01.png">
+通过npm安装hexo<br>$ npm install -g hexo-cli<img src="/2018/04/09/hexoblog/hexo_02.png">
+由于我已经安装过了，就不重复了，直接回车就好。<br>安装完毕再次安装<br>$ npm install hexo –save<br>都安装完成之后，严重会是否正确<br>$ hexo -v<img src="/2018/04/09/hexoblog/hexo_03.png">
+<h5 id="运行hexo"><a href="#运行hexo" class="headerlink" title="运行hexo"></a>运行hexo</h5>初始化hexo<br>$ hexo init<img src="/2018/04/09/hexoblog/hexo_04.png">
+安装生成器<br>$ npm install<br>运行hexo,以后要在本地运行博客只要输入该命令即可<br>$ hexo s -g<img src="/2018/04/09/hexoblog/hexo_05.png">
+打开浏览器，输入localhost:4000,就可以在本地看到你的个人博客了 <img src="/2018/04/09/hexoblog/hexo_06.png">
+由于自己已经更新过了，所以就网上搜索了个原本安装之后的截图效果。<br>停止运行就是按ctrl+C。<br>在这里先说明几个常用的命令<br>hexo clean   这个是清除hexo缓存。如果之后进行数据上传github的时候一定要先清除下。否则因为缓存原因导致新数据没上传。<br>hexo deloy  可以简写 hexo d  也就是上传到你的指定网站内。通过这文章搭建也就是上传到github上。<br>hexo config  进行配置设置 如果端口号4000 被占用可以通过这里修改<br>hexo generate  可以简写 hexo g  生成静态页面<br>hexo new  文章名  生成1个新的文章<br>hexo server  简写 hexo s 在本地环境下生成<br>以及多个一起可以写成 hexo s -g  也可以 hexo g -s<br>了解大致命令之后接下来会针对这些进行介绍<h4 id="管理博客"><a href="#管理博客" class="headerlink" title="管理博客"></a>管理博客</h4><h5 id="进行数据配置"><a href="#进行数据配置" class="headerlink" title="进行数据配置"></a>进行数据配置</h5>通过编辑器打开blog/_config.yml文件，进行配置  我个人使用的是phpstorm，属于很笨重的编辑器，如果只是想单纯搭建博客，可以使用<a href="https://pan.baidu.com/s/1nXVqOAlA_rytcU3Zui7XTQ" target="_blank" rel="noopener">Sublime_Text</a>编辑器。如果你连这个都不想安装，可以使用windows自带的文本文档打开<img src="/2018/04/09/hexoblog/hexo_07.png">
+<strong>#博客名称</strong><br>title: 博客名<br><strong>#副标题</strong><br>subtitle: 一天进步一点<br><strong>#简介</strong><br>description: 我们所度过的每个平凡的日常,也许就是连续发生的奇迹。<br><strong>#博客作者</strong><br>author: darksea<br><strong>#博客语言</strong><br>language: zh-CN<br><strong>#时区</strong><br>timezone:<br><strong>#博客地址,与申请的GitHub一致</strong><br>url: <a href="http://blog.mydarksea.com">http://blog.mydarksea.com</a><br>root: /<br><strong>#博客链接格式</strong><br>permalink: :year/:month/:day/:title/<br>permalink_defaults:<br>source_dir: source<br>public_dir: public<br>tag_dir: tags<br>archive_dir: archives<br>category_dir: categories<br>code_dir: downloads/code<br>i18n_dir: :lang<br>skip_render:<br>new_post_name: :title.md # File name of new posts<br>default_layout: post<br>titlecase: false # Transform title into titlecase<br>external_link: true # Open external links in new tab<br>filename_case: 0<br>render_drafts: false<br>post_asset_folder: false<br>relative_link: false<br>future: true<br>highlight:<br>enable: true<br>line_number: true<br>auto_detect: true<br>tab_replace:<br>default_category: uncategorized<br>category_map:<br>tag_map:<br><strong>#日期格式</strong><br>date_format: YYYY-MM-DD<br>time_format: HH:mm:ss<br><strong>#分页，每页文章数量</strong><br>per_page: 10<br>pagination_dir: page<br><strong>#博客主题</strong><br>theme: next<br><strong>#发布设置</strong><br>deploy:<br>type: git<br> <strong>#bingfengding改为你的github用户名</strong><br>repository: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:bingfengding/bingfengding.github.io.git<br>branch: master<h5 id="写一篇文章"><a href="#写一篇文章" class="headerlink" title="写一篇文章"></a>写一篇文章</h5>输入创建文章命令，生成一个md文件(/blog/source/_posts/)<br>$ hexo new “helloWorld”<br>用编辑器打开hello.md文件,编写之后就保存<h4 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h4><h5 id="设置git身份信息"><a href="#设置git身份信息" class="headerlink" title="设置git身份信息"></a>设置git身份信息</h5>$ git config –global user.name “你的用户名”<br>$ git config –global user.email “你的邮箱”<img src="/2018/04/09/hexoblog/hexo_08.png">
+安装hexo git插件<br>$ npm install hexo-deployer-git –save<img src="/2018/04/09/hexoblog/hexo_09.png">
+<h5 id="发布更新博客"><a href="#发布更新博客" class="headerlink" title="发布更新博客"></a>发布更新博客</h5>$ hexo d -g<br>发布成功后，访问yourname.github.io看下成果</li>
+</ul>
+<h4 id="安装主题next"><a href="#安装主题next" class="headerlink" title="安装主题next"></a>安装主题next</h4><p>依旧是打开你的右键git base here 打开你的blog文件夹<br>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next<br><img src="/2018/04/09/hexoblog/next_01.png"><br>这原理很简单，就是将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。</p>
+<h5 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h5><p>打开blog/_config.yml， 找到 theme 字段，并将其值更改为 next。<br><img src="/2018/04/09/hexoblog/hexo_07.png"><br>NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存。</p>
+<h5 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h5><p> hexo s –debug<br> 加上debug是为了方便检测异常问题，不加也没事。打开之后检查是否正常<br> 当你看到站点的外观与下图所示类似时即说明你已成功安装 NexT 主题。这是 NexT 默认的 Scheme —— Muse<br> <img src="/2018/04/09/hexoblog/next_02.png"></p>
+<h5 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h5><h6 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h6><p> 打开blog/themes/next/_config.yml(注意这里是next主题下的设置，而不是主文件夹下的不要找错了)，搜索 Schemes 关键字。 你会看到有四行 Scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<br><img src="/2018/04/09/hexoblog/next_03.png"><br> next 下的主题样式，可以自行切换来选择自己喜欢的主题样式。<br> 个人比较喜欢Mist.</p>
+<h6 id="设置-语言"><a href="#设置-语言" class="headerlink" title="设置 语言"></a>设置 语言</h6><p>打开外部配置文件 也就是主文件夹下的_config.yml  搜索 language: 设置为 language: zh-Hans 这个是简体中文的意思，如果你需要其他语言自行选择。<br><img src="/2018/04/09/hexoblog/next_04.png"></p>
+<h6 id="设置-菜单"><a href="#设置-菜单" class="headerlink" title="设置 菜单"></a>设置 菜单</h6><p>打开主题配置文件 也就是next下的配置文件 对应的字段是 menu<br><img src="/2018/04/09/hexoblog/next_05.png"><br>各个菜单项目对应的含义为<br><img src="/2018/04/09/hexoblog/next_06.png"><br>自行选择需要的进行开启<br>设置完毕之后，还需要去你选择的对应语言去修改设置进行提取文本。否则显示的就是默认的。如果之前选择的是zh-Hans 那么去$ next/languages/zh-Hans.yml 进行设置<br><img src="/2018/04/09/hexoblog/next_07.png"><br>注意大小写，一定要严格遵守，不要乱改前面属性的大小写</p>
+<h6 id="设置标签"><a href="#设置标签" class="headerlink" title="设置标签"></a>设置标签</h6><p>hexo设置好之后，你点击标签，分类会报错，这个设置可以直接在next的主题配置里面有说明，因为还没生成对应页面。<br>可以通过 $ hexo new page tags<br>$ hexo new page categories 去生成对应的</p>
+<h6 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h6><p>编辑 主题配置文件， 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是完整的url或者是站点内的相对地址，放置在 source/images/ 目录下 配置为：avatar: /images/avatar.png<br><img src="/2018/04/09/hexoblog/next_08.png"></p>
+<h4 id="添加文章阅读量统计功能"><a href="#添加文章阅读量统计功能" class="headerlink" title="添加文章阅读量统计功能"></a>添加文章阅读量统计功能</h4><h5 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h5><p>打开<a href="https://leancloud.cn" target="_blank" rel="noopener">LeanCloud</a>进行注册,注册完毕之后点击创建应用<br><img src="/2018/04/09/hexoblog/leancloud_01.png"><br>应用名随意<br><img src="/2018/04/09/hexoblog/leancloud_02.png"><br>取名完毕之后点击进入应用，选择创建class来专门保存我们博客的文章访问量等数据:<br><img src="/2018/04/09/hexoblog/leancloud_03.png"><br>为了与next兼容新建Class名字必须为Counter。由于LeanCloud升级了默认的ACL权限，如果你想避免后续因为权限的问题导致次数统计显示不正常，建议在此处选择无限制。<br><img src="/2018/04/09/hexoblog/leancloud_04.png"><br>创建完成之后，左侧数据栏应该会多出一栏名为Counter的栏目，这个时候我们点击顶部的设置，切换到你新建的应用的操作界面:<br>在弹出的界面中，选择左侧的应用Key选项，即可发现我们创建应用的AppID以及AppKey，有了它，我们就有权限能够通过主题中配置好的Javascript代码与这个应用的Counter表进行数据存取操作<br><img src="/2018/04/09/hexoblog/leancloud_06.png"><br>复制AppID以及AppKey并在NexT主题的_config.yml文件中我们相应的位置填入即可，正确配置之后文件内容像这个样子:<br><img src="/2018/04/09/hexoblog/leancloud_07.png"></p>
+<h5 id="安全设置"><a href="#安全设置" class="headerlink" title="安全设置"></a>安全设置</h5><p>因为AppID以及AppKey是暴露在外的，因此如果一些别用用心之人知道了之后用于其它目的是得不偿失的，为了确保只用于我们自己的博客，建议开启Web安全选项，这样就只能通过我们自己的域名才有权访问后台的数据了，可以进一步提升安全性。<br>选择应用的设置的安全中心选项卡:<br><img src="/2018/04/09/hexoblog/leancloud_08.png"><br>在Web 安全域名中填入我们自己的博客域名，来确保数据调用的安全:<br><img src="/2018/04/09/hexoblog/leancloud_09.png"></p>
+<h4 id="添加评论"><a href="#添加评论" class="headerlink" title="添加评论"></a>添加评论</h4><p>默认是支持很多评论工具的，不过不少都不可用或者不好用。推荐可以试试使用搜狐的畅言评论</p>
+<h5 id="畅言评论"><a href="#畅言评论" class="headerlink" title="畅言评论"></a>畅言评论</h5><p>注册很简单，就不截图说明了，注册完毕之后依照提示进行站点的添加<br><img src="/2018/04/09/hexoblog/changyan_01.png"><br>获取APP ID、APP KEY<br><img src="/2018/04/09/hexoblog/changyan_02.png"></p>
+<h5 id="上线畅言评论"><a href="#上线畅言评论" class="headerlink" title="上线畅言评论"></a>上线畅言评论</h5><p>打开主题的配置文件也就是  themes/next/_config.yml文件<br>搜索changyan设置为<br><img src="/2018/04/09/hexoblog/changyan_03.png"><br>清除再重启，hexo clean;hexo d<br>评论功能正式完成</p>
+<h4 id="为博客更改域名"><a href="#为博客更改域名" class="headerlink" title="为博客更改域名"></a>为博客更改域名</h4><p>对于有自己域名的人，肯定不会满足于使用github.io 这个现实为博客名的。因此这里也介绍下如何绑定自己的域名下。以自己的万网介绍。<br>进入后台管理。<br><img src="/2018/04/09/hexoblog/ip_01.png"><br>点击解析，进入如下页面进行点击 添加解析 ：<br><img src="/2018/04/09/hexoblog/ip_02.png"><br>最后还有一步，在你的本地博客 source 目录下，新建一个文件，命名为 CNAME ，内容为你设置的域名<br><img src="/2018/04/09/hexoblog/ip_03.png"><br>本来之前是用的ip，绑定的A记录，后来登录github推荐使用CNAME记录，因为ip有可能受到其他影响变化等。依照这样配置创建完毕，10分钟之后，你的自己域名的博客就产生了。</p>
+<h4 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h4><p>生成微信，支付宝二维码<br>在_config.yml中配置图片<br><img src="/2018/04/09/hexoblog/pay.png"><br>当点击打赏之后，发现下面的字在如同地球一样疯狂自转动<br>打开next/source/css/_common/components/post/post-reward.styl，注释wechat:hover和alipay:hover<br><img src="/2018/04/09/hexoblog/pay_01.png"></p>
+<h4 id="所有设置完毕结果发现-最下面居然有hexo的官方logo，强力驱动什么鬼"><a href="#所有设置完毕结果发现-最下面居然有hexo的官方logo，强力驱动什么鬼" class="headerlink" title="所有设置完毕结果发现 最下面居然有hexo的官方logo，强力驱动什么鬼"></a>所有设置完毕结果发现 最下面居然有hexo的官方logo，强力驱动什么鬼</h4><p>找到 \themes\next\layout_partials\下面的footer.swig文件，打开会发现，如下图的类似的语句：<br><img src="/2018/04/09/hexoblog/hexo_10.png"><br>删除或自行修改就好</p>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>才开始接触，其他之后慢慢研究，有有趣的可以相互交流</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢支持</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="丁海洋 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="丁海洋 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/next/" rel="tag"># next</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/07/md/" rel="next" title="md的基本常用编写语法">
+                <i class="fa fa-chevron-left"></i> md的基本常用编写语法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="丁海洋" />
+            
+              <p class="site-author-name" itemprop="name">丁海洋</p>
+              <p class="site-description motion-element" itemprop="description">我们所度过的每个平凡的日常,也许就是连续发生的奇迹。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/bingfengding" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:bingfengding@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#闲谈"><span class="nav-number">1.</span> <span class="nav-text">闲谈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#环境"><span class="nav-number">2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-node-js安装"><span class="nav-number">2.1.</span> <span class="nav-text">git node.js安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#github"><span class="nav-number">2.2.</span> <span class="nav-text">github</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#申请github"><span class="nav-number">2.2.1.</span> <span class="nav-text">申请github</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.2.2.</span> <span class="nav-text">创建版本库</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运行hexo"><span class="nav-number">2.4.</span> <span class="nav-text">运行hexo</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管理博客"><span class="nav-number">3.</span> <span class="nav-text">管理博客</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进行数据配置"><span class="nav-number">3.1.</span> <span class="nav-text">进行数据配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#写一篇文章"><span class="nav-number">3.2.</span> <span class="nav-text">写一篇文章</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布博客"><span class="nav-number">4.</span> <span class="nav-text">发布博客</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#设置git身份信息"><span class="nav-number">4.1.</span> <span class="nav-text">设置git身份信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#发布更新博客"><span class="nav-number">4.2.</span> <span class="nav-text">发布更新博客</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装主题next"><span class="nav-number">5.</span> <span class="nav-text">安装主题next</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#启用主题"><span class="nav-number">5.1.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#验证主题"><span class="nav-number">5.2.</span> <span class="nav-text">验证主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主题设定"><span class="nav-number">5.3.</span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#选择-Scheme"><span class="nav-number">5.3.1.</span> <span class="nav-text">选择 Scheme</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#设置-语言"><span class="nav-number">5.3.2.</span> <span class="nav-text">设置 语言</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#设置-菜单"><span class="nav-number">5.3.3.</span> <span class="nav-text">设置 菜单</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#设置标签"><span class="nav-number">5.3.4.</span> <span class="nav-text">设置标签</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#设置头像"><span class="nav-number">5.3.5.</span> <span class="nav-text">设置头像</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加文章阅读量统计功能"><span class="nav-number">6.</span> <span class="nav-text">添加文章阅读量统计功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注册"><span class="nav-number">6.1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安全设置"><span class="nav-number">6.2.</span> <span class="nav-text">安全设置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加评论"><span class="nav-number">7.</span> <span class="nav-text">添加评论</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#畅言评论"><span class="nav-number">7.1.</span> <span class="nav-text">畅言评论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上线畅言评论"><span class="nav-number">7.2.</span> <span class="nav-text">上线畅言评论</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为博客更改域名"><span class="nav-number">8.</span> <span class="nav-text">为博客更改域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打赏功能"><span class="nav-number">9.</span> <span class="nav-text">打赏功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#所有设置完毕结果发现-最下面居然有hexo的官方logo，强力驱动什么鬼"><span class="nav-number">10.</span> <span class="nav-text">所有设置完毕结果发现 最下面居然有hexo的官方logo，强力驱动什么鬼</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结语"><span class="nav-number">11.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By -丁海洋</span>
+
+  
+</div>
+
+
+  <div class="powered-by"><a class="theme-link" target="_blank" href="https://www.mydarksea">苹果小屋</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主页 &mdash; <a class="theme-link" target="_blank" href="https://www.mydarksea.com">dark sea</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytyw847r';
+      var conf = '151bfaa3279756033ad12d9d3de7582f';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("iwvnAcc5gTnsoaBmcVYcPzkL-gzGzoHsz", "T5wSfiMSKFTFOrof8PxPtIYg");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
