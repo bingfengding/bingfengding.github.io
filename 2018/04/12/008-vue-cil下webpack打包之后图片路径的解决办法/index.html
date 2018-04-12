@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vue,webpack," />
 
 
 
@@ -79,16 +79,22 @@
 
 
 
-<meta name="description" content="我们所度过的每个平凡的日常,也许就是连续发生的奇迹。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="my dark sea">
-<meta property="og:url" content="http://blog.mydarksea.com/tags/next/index.html">
+<meta name="description" content="可以肯定的说初接触webpack+vue-cil很多人都遇到多不少关于打包之后的路径问题。对于这方面问题的解决办法整理下方便后来人。 绝对路径导致的问题正常情况下来说，webpack+vue-cil默认打包的css资源，js资源等的路径都是设置的绝对路径，打开 $ config/index.js 如下图。看红框内的路径设置的为绝对路径，因此先将它改为相对路径：1assetsPublicPath:">
+<meta name="keywords" content="vue,webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-cil下webpack打包之后图片路径的解决办法">
+<meta property="og:url" content="http://blog.mydarksea.com/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/index.html">
 <meta property="og:site_name" content="my dark sea">
-<meta property="og:description" content="我们所度过的每个平凡的日常,也许就是连续发生的奇迹。">
+<meta property="og:description" content="可以肯定的说初接触webpack+vue-cil很多人都遇到多不少关于打包之后的路径问题。对于这方面问题的解决办法整理下方便后来人。 绝对路径导致的问题正常情况下来说，webpack+vue-cil默认打包的css资源，js资源等的路径都是设置的绝对路径，打开 $ config/index.js 如下图。看红框内的路径设置的为绝对路径，因此先将它改为相对路径：1assetsPublicPath:">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/url_01.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/url_02.png">
+<meta property="og:image" content="http://blog.mydarksea.com/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/url_03.png">
+<meta property="og:updated_time" content="2018-04-12T08:51:38.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="my dark sea">
-<meta name="twitter:description" content="我们所度过的每个平凡的日常,也许就是连续发生的奇迹。">
+<meta name="twitter:title" content="vue-cil下webpack打包之后图片路径的解决办法">
+<meta name="twitter:description" content="可以肯定的说初接触webpack+vue-cil很多人都遇到多不少关于打包之后的路径问题。对于这方面问题的解决办法整理下方便后来人。 绝对路径导致的问题正常情况下来说，webpack+vue-cil默认打包的css资源，js资源等的路径都是设置的绝对路径，打开 $ config/index.js 如下图。看红框内的路径设置的为绝对路径，因此先将它改为相对路径：1assetsPublicPath:">
+<meta name="twitter:image" content="http://blog.mydarksea.com/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/url_01.png">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.mydarksea.com/tags/next/"/>
+  <link rel="canonical" href="http://blog.mydarksea.com/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/"/>
 
 
 
 
 
-  <title>标签: next | my dark sea</title>
+  <title>vue-cil下webpack打包之后图片路径的解决办法 | my dark sea</title>
   
 
 
@@ -143,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,54 +243,256 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>next<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.mydarksea.com/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丁海洋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my dark sea">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/09/hexoblog/" itemprop="url">
-              
-                <span itemprop="name">用hexo+github搭建自己的博客并使用next设置主题</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">vue-cil下webpack打包之后图片路径的解决办法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-09T14:45:39+08:00"
-              content="2018-04-09" >
-          04-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T16:34:22+08:00">
+                2018-04-12
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/" class="leancloud_visitors" data-flag-title="vue-cil下webpack打包之后图片路径的解决办法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  335 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>可以肯定的说初接触webpack+vue-cil很多人都遇到多不少关于打包之后的路径问题。对于这方面问题的解决办法整理下方便后来人。</p>
+<h4 id="绝对路径导致的问题"><a href="#绝对路径导致的问题" class="headerlink" title="绝对路径导致的问题"></a>绝对路径导致的问题</h4><p>正常情况下来说，webpack+vue-cil默认打包的css资源，js资源等的路径都是设置的绝对路径，打开 $ config/index.js 如下图。<br><img src="/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/url_01.png"><br>看红框内的路径设置的为绝对路径，因此先将它改为相对路径：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assetsPublicPath: <span class="string">'./'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>注意: 是build 下面的而不是dev下面的，是打包环境而不是生产环境</strong><br>然后打开 $ build/webpack.prod.conf.js找到下图位置<br><img src="/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/url_02.png"><br>添加上红框内的这行，这样资源引用就好了。</p>
+<h4 id="背景图片的问题"><a href="#背景图片的问题" class="headerlink" title="背景图片的问题"></a>背景图片的问题</h4><p>通过上面的修改之后，会发现部分背景图片的引用依旧错误，具体原因是因为图片资源是通过css加载的，例如background: url(“../../assets/images/bg.png”) no-repeat;被相对打包后变成了url(static/img/bg.png) no-repeat<br>对于这个情况需要将后者给他添加上 ../../ 这个正确的路径<br>方法是打开$ build/utils.js如下图：<br><img src="/2018/04/12/008-vue-cil下webpack打包之后图片路径的解决办法/url_03.png"><br>添加红框内的内容即可，这样css的图片引用就可以正常解决了，可以愉快的进行打包了。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢支持</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="丁海洋 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="丁海洋 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/12/007-vue项目引入jquery/" rel="next" title="在vue项目中如何引用jquery等插件">
+                <i class="fa fa-chevron-left"></i> 在vue项目中如何引用jquery等插件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -292,6 +500,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -312,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -393,6 +619,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对路径导致的问题"><span class="nav-number">1.</span> <span class="nav-text">绝对路径导致的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景图片的问题"><span class="nav-number">2.</span> <span class="nav-text">背景图片的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -535,6 +777,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
